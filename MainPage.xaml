@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="guardianEyeMAUI.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <BoxView 
+            Grid.ColumnSpan="2"
+            Color="DarkSlateGray" />
+        <ImageButton
+            Source="gear_icon.png"
+            SemanticProperties.Description="Settings Menu Button"
+            Clicked="SettingsButton_Clicked"/>
+        <Label
+            Text="Settings"
+            VerticalOptions="End"
+            HorizontalOptions="Center"
+            TextColor="White"
+            />
+        <Image 
+            Grid.ColumnSpan="2"
+            Source="guardian_eye.png"
+            SemanticProperties.Description="GuardianEye Logo"
+            HeightRequest="70"/>
+        <ListView 
+                  Grid.Row="1"
+                  Grid.ColumnSpan="2"
+                  ItemsSource="{Binding Detections}"
+                  ItemTapped="ListView_ItemTapped"
+                  HasUnevenRows="False"
+                  RowHeight="90"
+                  SeparatorVisibility="Default"
+                  SeparatorColor="Aqua">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image 
+                                Grid.RowSpan="2" 
+                                Source="{Binding ImageUrl}" 
+                                Aspect="AspectFill" 
+                                HeightRequest="90" 
+                                WidthRequest="90"
+                                VerticalOptions="Start"/>
+                            <Label 
+                                Grid.Column="1" 
+                                Text="{Binding DetectionType}" 
+                                VerticalOptions="Start"
+                                FontSize="20"/>
+                            <Label  
+                                Grid.Row="1" 
+                                Grid.Column="1" 
+                                Text="{Binding TimeStamp}"
+                                VerticalOptions="Start"
+                                FontSize="16"
+                                TextColor="Gray"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

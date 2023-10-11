@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="guardianEyeMAUI.UserSettingsPage"
+             Title="Settings">
+    <FlexLayout 
+        Direction="Column"
+        Margin="5"
+        JustifyContent="SpaceBetween"
+        >
+        <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <Label
+                Grid.Column="0"
+                Text="Human Notifications Enabled?"
+                FontSize="17"
+                VerticalOptions="Center"
+            />
+            <Switch
+                Grid.Row="0"
+                Grid.Column="1"
+                x:Name="Human_Notifs"
+                IsToggled="True"
+                Toggled="Human_Notifs_Toggled"
+                HorizontalOptions="Start"
+            />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="Enable Car Notifications?"
+                FontSize="17"
+                VerticalOptions="Center"
+            />
+            <Switch
+                Grid.Row="1"
+                Grid.Column="1"
+                x:Name="Car_Notifs"
+                IsToggled="True"
+                Toggled="Car_Notifs_Toggled"
+                HorizontalOptions="Start"
+            />
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Enable Animal Notifications?"
+                FontSize="17"
+                VerticalOptions="Center"
+            />
+            <Switch
+                Grid.Row="2"
+                Grid.Column="1"
+                x:Name="Animal_Notifs"
+                IsToggled="True"
+                Toggled="Animal_Notifs_Toggled"
+                HorizontalOptions="Start"
+            />
+        </Grid>
+            <Button
+                x:Name="Close_Settings"
+                Text="Close and Apply"
+                Clicked="Close_Settings_Clicked"
+                VerticalOptions="End"
+                 HorizontalOptions="Center" />
+
+        
+    </FlexLayout>
+
+</ContentPage>

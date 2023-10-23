@@ -15,4 +15,9 @@
     Title="Settings"
     ContentTemplate="{DataTemplate local:UserSettingsPage}"
     Route="UserSettingsPage" />
+
+    <ShellContent
+    Title="API_Main"
+    ContentTemplate="{DataTemplate local:API_Main}"
+    Route="API_Main" />
 </Shell>

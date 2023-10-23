@@ -18,5 +18,11 @@
         {
 
         }
+
+        private async void SwapButton_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//API_Main");
+        }
+
     }
 }

@@ -5,7 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:guardianEyeMAUI"
     Shell.FlyoutBehavior="Disabled">
-
+    <ShellContent
+    Title="API_Main"
+    ContentTemplate="{DataTemplate local:API_Main}"
+    Route="API_Main" />
+    
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
@@ -16,8 +20,5 @@
     ContentTemplate="{DataTemplate local:UserSettingsPage}"
     Route="UserSettingsPage" />
 
-    <ShellContent
-    Title="API_Main"
-    ContentTemplate="{DataTemplate local:API_Main}"
-    Route="API_Main" />
+
 </Shell>

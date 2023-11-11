@@ -14,7 +14,7 @@
             <ColumnDefinition Width="60"/>
         </Grid.ColumnDefinitions>
         <BoxView 
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="3"
             Color="DarkSlateGray" />
         <ImageButton
             Source="gear_icon.png"
@@ -31,13 +31,13 @@
             TextColor="White"
             />
         <Image 
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="3"
             Source="guardian_eye.png"
             SemanticProperties.Description="GuardianEye Logo"
             HeightRequest="70"/>
         <ListView 
                   Grid.Row="1"
-                  Grid.ColumnSpan="2"
+                  Grid.ColumnSpan="3"
                   ItemsSource="{Binding Detections}"
                   ItemTapped="ListView_ItemTapped"
                   HasUnevenRows="False"

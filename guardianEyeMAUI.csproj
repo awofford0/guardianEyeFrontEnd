@@ -57,16 +57,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	  <None Remove="Platforms\Android\google-services.json" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="SampleDataSet.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>SampleDataSet.xsd</DependentUpon>
-	  </Compile>
+	  <GoogleServicesJson Include="Platforms\Android\google-services.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -78,11 +78,16 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <None Update="SampleDataSet.xsd">
-	    <Generator>MSDataSetGenerator</Generator>
-	    <LastGenOutput>SampleDataSet.Designer.cs</LastGenOutput>
-	  </None>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+	  <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx">
+	    <Version>1.6.2</Version>
+	  </PackageReference>
+	  <PackageReference Include="Xamarin.Firebase.Messaging">
+	    <Version>123.2.1.1</Version>
+	  </PackageReference>
+	  <PackageReference Include="Xamarin.GooglePlayServices.Base">
+	    <Version>118.2.0.4</Version>
+	  </PackageReference>
 	</ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@ public partial class UserSettingsPage : ContentPage
 
     private async void Close_Settings_Clicked(object sender, EventArgs e)
     {
-		await Shell.Current.GoToAsync("//MainPage");
+		await Shell.Current.GoToAsync("//API_Main");
     }
 
     private void Human_Notifs_Toggled(object sender, ToggledEventArgs e)

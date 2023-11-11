@@ -3,7 +3,7 @@ using Android.Runtime;
 
 namespace guardianEyeMAUI
 {
-    [Application]
+    [Application(UsesCleartextTraffic = true, Label = "My Maui App")]
     public class MainApplication : MauiApplication
     {
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)

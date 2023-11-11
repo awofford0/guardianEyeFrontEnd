@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="guardianEyeMAUI.MainPage">
+             x:Class="guardianEyeMAUI.API_Main"
+             Title="API_Main">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -20,10 +21,7 @@
             Source="gear_icon.png"
             SemanticProperties.Description="Settings Menu Button"
             Clicked="SettingsButton_Clicked"/>
-        <Button
-            Grid.Column ="2"
-            SemanticProperties.Description="Swap to API Controlled View"
-            Clicked="SwapButton_Clicked"/>
+
         <Label
             Text="Settings"
             VerticalOptions="End"
@@ -36,9 +34,9 @@
             SemanticProperties.Description="GuardianEye Logo"
             HeightRequest="70"/>
         <ListView 
+                  x:Name="listView"
                   Grid.Row="1"
                   Grid.ColumnSpan="3"
-                  ItemsSource="{Binding Detections}"
                   ItemTapped="ListView_ItemTapped"
                   HasUnevenRows="False"
                   RowHeight="90"
@@ -58,7 +56,7 @@
                             </Grid.ColumnDefinitions>
                             <Image 
                                 Grid.RowSpan="2" 
-                                Source="{Binding imageName}" 
+                                Source="{Binding imageUrl}" 
                                 Aspect="AspectFill" 
                                 HeightRequest="90" 
                                 WidthRequest="90"

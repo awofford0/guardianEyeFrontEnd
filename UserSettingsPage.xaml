@@ -21,7 +21,7 @@
 
             <Label
                 Grid.Column="0"
-                Text="Human Notifications Enabled?"
+                Text="Enable Human Notifications?"
                 FontSize="17"
                 VerticalOptions="Center"
             />

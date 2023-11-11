@@ -8,8 +8,10 @@ namespace guardianEyeMAUI.Models
 {
     public class Detection
     {
-        public string TimeStamp { get; set; }
-        public string ImageUrl { get; set; }
-        public string DetectionType {  get; set; }
+        public string timeStamp { get; set; }
+        public string imageName { get; set; }
+
+        public string imageUrl { get; set; }
+        public string category {  get; set; }
     }
 }

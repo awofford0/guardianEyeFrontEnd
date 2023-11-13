@@ -1,6 +1,5 @@
 ﻿using guardianEyeMAUI.Services;
 using Microsoft.Maui.Controls;
-
 namespace guardianEyeMAUI
 {
     public partial class API_Main : ContentPage
@@ -10,6 +9,7 @@ namespace guardianEyeMAUI
         {
             InitializeComponent();
             _service = service;
+            _service.SendToken(Preferences.Get("DeviceToken", "beef"));
         }
 
         protected async override void OnAppearing()

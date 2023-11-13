@@ -12,5 +12,7 @@ namespace guardianEyeMAUI.Services
         Task<List<Detection>> RefreshDataAsync();
 
         Task DeleteDetectionAsync(string id);
+
+        Task SendToken(string token);
     }
 }

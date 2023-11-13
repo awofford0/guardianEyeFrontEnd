@@ -18,8 +18,6 @@ namespace guardianEyeMAUI.Services
             try
             {
                 HttpResponseMessage response = await _httpClient.GetAsync(uri);
-                int foo = 0;
-                foo = foo + 1;
                 if (response.IsSuccessStatusCode)
                 {
                     string content = await response.Content.ReadAsStringAsync();
@@ -45,6 +43,14 @@ namespace guardianEyeMAUI.Services
             catch (Exception ex)
             {
             }
+        }
+
+        public async Task SendToken(string token)
+        {
+            StringContent tokenHttp = new StringContent(token);
+            Uri uri = new Uri(string.Concat(Constants.baseAddress, "?token=", token));
+            HttpResponseMessage response = await _httpClient.PutAsync(uri, tokenHttp);
+            Console.WriteLine("Tried to send the device token to server");
         }
     }
 }

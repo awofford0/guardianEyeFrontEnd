@@ -8,6 +8,7 @@ namespace guardianEyeMAUI
     public class MainActivity : MauiAppCompatActivity
     {
         internal static readonly string Channel_ID = "Test";
+        internal static readonly int NotificationID = 1;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -16,7 +17,9 @@ namespace guardianEyeMAUI
 
         private void CreateNotificationChannel()
         {
-            //var channel = new NotficationChannel(Channel_ID,"Test Channel", NotificationImportance.Default);
+            var channel = new NotificationChannel(Channel_ID,"Test Channel", NotificationImportance.Default);
+            var notificationManager = (NotificationManager)GetSystemService(Android.Content.Context.NotificationService);
+            notificationManager.CreateNotificationChannel(channel);
         }
     }
 }
